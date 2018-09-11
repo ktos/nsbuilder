@@ -5,6 +5,11 @@ unix:QMAKE_CXXFLAGS ~= s/-m64/-m32/
 unix:QMAKE_LFLAGS ~= s/-m64/-m32/
 }
 
+linux-g++ | linux-g++-64 | linux-g++-32 {
+    QMAKE_CXX = g++-4.9
+    QMAKE_CC = gcc-4.9
+}
+
 win32:DEFINES		+= WIN32
 win32:QMAKE_YACC	= bison
 win32:QMAKE_MOVE	= ren
